@@ -189,7 +189,7 @@ if uploaded_file is not None:
     if st.button("Generate Notes"):
         with st.spinner("Extracting text from PDF..."):
             # Extract text from the uploaded PDF
-            extracted_text = extract_text_from_pdf(temp_path, poppler_path=poppler_path)
+            extracted_text = extract_text_from_pdf(temp_path)
             
             if not extracted_text:
                 st.error("Could not extract text from the PDF. Please try another file.")
