@@ -1,6 +1,5 @@
-import openai
+
 import os
-import requests
 import dotenv
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
