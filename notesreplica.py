@@ -22,7 +22,7 @@ qwen_api_key = os.getenv("QWEN_API_KEY")
 deep_seek_api = os.getenv("DEEP_SEEK_API")
 deep_llama_api = os.getenv("DEEP_LLAMA_API")
 groq_api_key = "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"#os.getenv("groq_api_key")
-
+poppler_path = "/usr/bin/"
 def encode_image_to_base64(image_path):
     """Read a local image and return a base64-encoded string."""
     with open(image_path, "rb") as f:
@@ -35,7 +35,7 @@ def extract_text_from_pdf(pdf_path):
     # Create temporary directory to store images
     with tempfile.TemporaryDirectory() as temp_dir:
         # Convert PDF pages to images
-        images = convert_from_path(pdf_path)
+        images = convert_from_path(pdf_path, poppler_path=poppler_path)
         split_images = []
         for i, image in enumerate(images):
             width, height = image.size
