@@ -16,6 +16,14 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 import torch
+import asyncio
+
+os.environ["STREAMLIT_WATCH_FILE"] = "false"  # Fix PyTorch conflict
+
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.run(asyncio.sleep(0))
 
 dotenv.load_dotenv()
 qwen_api_key = os.getenv("QWEN_API_KEY")
