@@ -44,30 +44,30 @@ def extract_text_from_pdf(pdf_path):
     with tempfile.TemporaryDirectory() as temp_dir:
         # Convert PDF pages to images
         images = convert_from_path(pdf_path, poppler_path=poppler_path)
-        split_images = []
-        for i, image in enumerate(images):
-            width, height = image.size
+        # split_images = []
+        # for i, image in enumerate(images):
+        #     width, height = image.size
             
-            # Split into left and right halves
-            left = image.crop((0, 0, width // 2, height))
-            right = image.crop((width // 2, 0, width, height))
+        #     # Split into left and right halves
+        #     left = image.crop((0, 0, width // 2, height))
+        #     right = image.crop((width // 2, 0, width, height))
             
-            # Save split images
-            # left_path = f"/page_{i + 1}_left.png"
-            # right_path = f"/page_{i + 1}_right.png"
+        #     # Save split images
+        #     # left_path = f"/page_{i + 1}_left.png"
+        #     # right_path = f"/page_{i + 1}_right.png"
             
-            # left.save(left_path)
-            # right.save(right_path)
+        #     # left.save(left_path)
+        #     # right.save(right_path)
             
-            split_images.extend([left, right])
+        #     split_images.extend([left, right])
             
-            # Initialize HuggingFace embeddings model
-            embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        #     # Initialize HuggingFace embeddings model
+        #     embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
             
-            # Process each image and create Document objects
-        documents = []
+        #     # Process each image and create Document objects
+        # documents = []
         
-        for i, image in enumerate(split_images):
+        for i, image in enumerate(images):
             # Save image temporarily
             temp_image_path = os.path.join(temp_dir, f'page_{i}.jpg')
             image.save(temp_image_path, 'JPEG')
