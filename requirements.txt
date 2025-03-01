@@ -9,3 +9,4 @@ pdf2image
 torch
 Pillow
 numpy
+sentence-transformers
