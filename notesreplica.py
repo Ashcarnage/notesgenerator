@@ -151,16 +151,16 @@ chat = ChatGroq(groq_api_key = groq_api_key,
                max_tokens=10000)
 
 
-test_image_path = "/Users/ayushbhakat/Documents/Sem-6/Notes/page_1_left.png"
+# test_image_path = "/Users/ayushbhakat/Documents/Sem-6/Notes/page_1_left.png"
 # Use provided image path or a sample base64 image
-if test_image_path:
-    # Read and encode the image file
-    with open(test_image_path, "rb") as image_file:
-        base64_image = base64.b64encode(image_file.read()).decode('utf-8')
-else:
-    # Sample base64 encoded image for testing (this is a placeholder)
-    # In a real implementation, you would include an actual base64 string of a test image
-    base64_image = "YOUR_BASE64_ENCODED_IMAGE_HERE"
+# if test_image_path:
+#     # Read and encode the image file
+#     with open(test_image_path, "rb") as image_file:
+#         base64_image = base64.b64encode(image_file.read()).decode('utf-8')
+# else:
+#     # Sample base64 encoded image for testing (this is a placeholder)
+#     # In a real implementation, you would include an actual base64 string of a test image
+#     base64_image = "YOUR_BASE64_ENCODED_IMAGE_HERE"
 
 # Create message with the image
 # Get the extracted text from the PDF
