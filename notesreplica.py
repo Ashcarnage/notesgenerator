@@ -39,7 +39,7 @@ def encode_image_to_base64(image_path):
 
 def extract_text_from_pdf(pdf_path):
     """Extract text from PDF by converting pages to images and using OCR."""
-
+    embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     # Create temporary directory to store images
     with tempfile.TemporaryDirectory() as temp_dir:
         # Convert PDF pages to images
