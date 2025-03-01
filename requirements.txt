@@ -10,3 +10,4 @@ torch
 Pillow
 numpy
 sentence-transformers
+faiss-cpu
