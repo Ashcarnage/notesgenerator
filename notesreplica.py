@@ -21,7 +21,7 @@ dotenv.load_dotenv()
 qwen_api_key = os.getenv("QWEN_API_KEY")
 deep_seek_api = os.getenv("DEEP_SEEK_API")
 deep_llama_api = os.getenv("DEEP_LLAMA_API")
-groq_api_key = os.getenv("groq_api_key")
+groq_api_key = "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"#os.getenv("groq_api_key")
 
 def encode_image_to_base64(image_path):
     """Read a local image and return a base64-encoded string."""
