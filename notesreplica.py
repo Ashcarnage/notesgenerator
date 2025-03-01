@@ -65,7 +65,7 @@ def extract_text_from_pdf(pdf_path):
         #     embeddings_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
             
         #     # Process each image and create Document objects
-        # documents = []
+        documents = []
         
         for i, image in enumerate(images):
             # Save image temporarily
